@@ -21,6 +21,9 @@ class ATMGreedy:
         if amount % 10000 != 0:
             return False, "Số tiền phải là bội số của 10,000 VNĐ"
 
+        if amount > 100000000:
+            return False, "Số tiền rút tối đa là 100,000,000 VNĐ"
+
         return True, ""
 
     # HÀM RÚT TIỀN

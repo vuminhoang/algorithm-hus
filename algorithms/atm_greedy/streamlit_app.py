@@ -17,13 +17,13 @@ def parse_currency_input(input_str: str) -> int:
 def main():
     # Cấu hình trang
     st.set_page_config(
-        page_title="ATM Greedy Algorithm",
+        page_title="ATM Greedy Algorithm (Naive Approach)",
         page_icon="💰",
         layout="centered"
     )
 
     # Header
-    st.title("ATM Greedy Algorithm")
+    st.title("ATM Greedy Algorithm Naive Approach")
     st.markdown("### Bài toán rút tiền sao cho số tờ tiền là ít nhất")
     st.markdown("---")
 
@@ -43,7 +43,12 @@ def main():
 
         **Quy tắc:**
         - Số tiền phải > 0
-        - Phải là bội số của 10,000 đ
+        - Phải là bội số của 10,000 VNĐ
+        - Chỉ được rút tối đa 100,000,000 VNĐ mỗi lần
+        
+        **Giả định:**
+        - ATM có đủ tất cả các mệnh giá, không giới hạn số tờ tiền
+        - Giả định này giúp minh họa thuật toán Greedy một cách đơn giản và dễ dàng nhất. 
         """)
 
         st.markdown("---")
@@ -64,7 +69,7 @@ def main():
         "💵 Nhập số tiền cần rút (VNĐ):",
         value=st.session_state.amount,
         placeholder="Ví dụ: 1,250,000",
-        help="Số tiền phải là bội số của 10,000",
+        help="Số tiền phải là bội số của 10,000 và nhỏ hơn hoặc bằng 100,000,000 VNĐ",
         key="amount_input"
     )
 
