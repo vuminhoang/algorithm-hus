@@ -1,4 +1,4 @@
-ATM Greedy Demo
+# ATM Greedy Demo
 
 ### Cách áp dụng thuật toán tham lam để rút tiền ATM
 
