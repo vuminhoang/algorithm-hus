@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  atm-greedy:
+    build:
+      context: ./algorithms/atm_greedy
+      dockerfile: Dockerfile
+    container_name: algorithm-hus-atm
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./algorithms/atm_greedy:/app
+    restart: unless-stopped
+    environment:
+      - PYTHONUNBUFFERED=1
